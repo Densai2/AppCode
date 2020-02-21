@@ -17,7 +17,7 @@ namespace CO453ClassConsoleApp.Unit4
         private string author, name, town;
         private string animal, weapon, job;
         private string gender, attack, body;
-        private string food, time, drink;
+        private string jumpscare, noise, twist;
 
         /// <summary>
         /// This method will initialise all the elements of the story
@@ -27,17 +27,16 @@ namespace CO453ClassConsoleApp.Unit4
         public Book()
         {
             author = SimpleIO.AUTHOR;
-            name = "Richard";
-            town = "Wendover";
-            animal = "cows";
-            weapon = "xbox connect";
-            job = "bartender";
-            gender = "she";
-            attack = "clobbered";
-            body = "elbow";
-            food = "shortcake";
-            time = "15:20";
-            drink = "Tea";
+            name = "Thomas";
+            animal = "penguin";
+            job = "accountant";
+            weapon = "calculator";
+            gender = "he";
+            attack = "solve equations";
+            body = "eye";
+            jumpscare = "Man with pig mask";
+            noise = "ice cream van";
+            twist = "woke up";
         }
 
         /// <summary>
@@ -67,6 +66,10 @@ namespace CO453ClassConsoleApp.Unit4
             gender = GetString("What gender is your friend (he/she): ");
             attack = GetString("What form of attack: ");
             body = GetString("What part of the body was attacked: ");
+            jumpscare = GetString("Name a monster: ");
+            noise = GetString("What can be heard in the distance: ");
+            twist = GetString("How does it end: ");
+
         }
 
         /// <summary>
@@ -93,10 +96,13 @@ namespace CO453ClassConsoleApp.Unit4
         /// </summary>
         public void WriteChapter2()
         {
-            Console.WriteLine();
-            Console.WriteLine();
+            SimpleIO.WriteTitle("Chapter Two", "Horror Story");
 
+            Console.WriteLine("Life in danger " + name + " sprints to the exit, only to be stopped by a " + jumpscare + ".");
 
+            Console.WriteLine("Terrified, " + name + "hid under the bed, while still they heard " + noise + name + " was in big trouble..");
+
+            Console.WriteLine("With nowhere to run, " + name + " layed still, closed their eyes. And finally, " + twist + ".");
         }
     }
 }

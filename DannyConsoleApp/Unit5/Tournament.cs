@@ -21,15 +21,12 @@ namespace TournamentUnit5
             scores = new int[MAXN_SCORES];
             names = new string[]
             {
-                "Godfrey",
-                "Eric",
-                "Georgia",
+                "Henry",
+                "Daisy",
+                "Hannah",
                 "Dylan",
-                "Oluyemi",
-                "Shamial",
-                "Numan",
-                "Liam",
-                "Gita"
+                "Sue",
+                "Frank"
             };
         }
 
