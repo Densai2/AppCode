@@ -96,7 +96,9 @@ namespace CO453ClassConsoleApp.Unit4
         /// </summary>
         public void WriteChapter2()
         {
-            SimpleIO.WriteTitle("Chapter Two", "Horror Story");
+           Console.WriteLine("");
+
+           Console.WriteLine("Chapter Two", "Horror Story");
 
             Console.WriteLine("Life in danger " + name + " sprints to the exit, only to be stopped by a " + jumpscare + ".");
 
