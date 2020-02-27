@@ -24,6 +24,8 @@ namespace CO453ClassConsoleApp.SPS
         {
             SetupScreen();
             StartGame();
+            Console.Write("Please type your name: ");
+            string userName = Console.ReadLine();
 
             for(turn = 1; turn <= MAXN_TURNS; turn++)
             {
@@ -52,8 +54,9 @@ namespace CO453ClassConsoleApp.SPS
         {
             Console.Clear();
             SimpleIO.WriteTitle(Title, "Week 3");
-
             Console.WriteLine("The overall winner is " + game.WinnerName);
+            
+           
         }
 
         /// <summary>
@@ -107,7 +110,7 @@ namespace CO453ClassConsoleApp.SPS
 
             if (player == RPS_Players.COMPUTER)
             {
-                x = 5;
+                x = 55;
                 choice = game.ComputerChoice;
             }
             else
@@ -152,10 +155,10 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         private void ShowResult()
         {
-            Console.WriteLine("\tThe current winner is the " + game.WinnerName);
+            Console.WriteLine("\t" + game.PlayerName + " score: " + game.PlayerScore);
+            Console.WriteLine("\tThe computer's score: " + game.ComputerScore);
+            Console.WriteLine("\tThe winner is the " + game.WinnerName);
             Console.WriteLine();
-            Console.WriteLine("\tThe player has won ");
-            Console.WriteLine("\tThe computer has won ");
         }
 
 
@@ -172,7 +175,7 @@ namespace CO453ClassConsoleApp.SPS
             Console.SetBufferSize(100, 36);
 
             Console.BackgroundColor = ConsoleColor.Blue;
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Black;
 
             Console.Clear();  // clear screen in chosen colour
         }
@@ -185,7 +188,7 @@ namespace CO453ClassConsoleApp.SPS
         private void StartGame()
         {
             SimpleIO.WriteTitle(Title, "Week 3");
-            game.Start("Derek");
+            game.Start("Danny");
         }
     }
 }

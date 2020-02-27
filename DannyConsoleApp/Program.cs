@@ -29,7 +29,7 @@ namespace CO453ClassConsoleApp
             //TestTournament();           // T5.1 and 5.3
             //TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
-            //TestRPS_Game();
+            TestRPS_Game();
         }
 
         private static void TestRPS_Game()
