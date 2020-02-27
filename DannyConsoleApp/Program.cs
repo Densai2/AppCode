@@ -13,7 +13,7 @@ namespace CO453ClassConsoleApp
     /// defined in Part A of CO453 and tests that each object
     /// works
     /// 
-    /// Objects include: DistanceConverter,  Book
+    /// Objects include: DistanceConverter,  Book \
     /// 
     /// Author: Dr Derek Peacock
     /// </summary>
@@ -25,13 +25,19 @@ namespace CO453ClassConsoleApp
         static void Main(string[] args)
         {
             //TestDistanceConverter();    // T4.1
-            TestBook();                 // T4.2 and T4.3
+            //TestBook();                 // T4.2 and T4.3
             //TestTournament();           // T5.1 and 5.3
             //TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
             //TestSPS_Game();
         }
 
+        private static void BMICalculator()
+        {
+            BodyMassIndex bodyMassIndex = new BodyMassIndex();
+
+            BodyMassIndex.Calculator();
+        }
         private static void TestSongs()
         {
             MP3Chart chart = new MP3Chart();
