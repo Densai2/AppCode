@@ -29,7 +29,9 @@ namespace TournamentUnit5
                 "Frank"
             };
         }
-
+        //<summery>
+        //Asks for scores, and then stores it as an interger.
+        //</summery>
         public void GetScores()
         {
             CO453ClassConsoleApp.SimpleIO.WriteTitle("Enter Tournament Scores", "Task 5.1");
@@ -41,7 +43,9 @@ namespace TournamentUnit5
             }
         }
 
-
+        //<summery>
+        //This will get the names and scores for all of the players
+        //</summery>
         public void GetDetails()
         {
             CO453ClassConsoleApp.SimpleIO.WriteTitle("Enter Tournament scores", "Task 5.1");
@@ -55,21 +59,14 @@ namespace TournamentUnit5
             }
         }
             
+        //<summery>
+        //Shows the players and their scores to the user
         public void ShowDetails()
         {
             CO453ClassConsoleApp.SimpleIO.WriteTitle("Show tournament scores", "Task 5.1");
             for (int i = 0; i < MAXN_SCORES; i++)
             {
                 Console.WriteLine("Player " + names[i] + " scored " + scores[i]); 
-            }
-        }
-        public void ShowScores()
-        {
-            CO453ClassConsoleApp.SimpleIO.WriteTitle("Show Tournament Scores", "Task 5.1");
-
-            for (int i = 0; i < MAXN_SCORES; i++)
-            {
-                Console.WriteLine("Player " + (i + 1) + " scored " + scores[i]);
             }
         }
     }

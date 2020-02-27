@@ -2,36 +2,44 @@
 
 namespace CO453ClassConsoleApp.SPS
 {
-    public enum Players
+    public enum RPS_Players
     {
+        NONE,
         COMPUTER,
         PLAYER
     }
 
+    public enum RPS_Choices
+    {
+        UNKOWN,
+        ROCK,
+        PAPER,
+        SCISSORS,
+    }
+
     /// <summary>
     /// This class plays ...
-    /// Author: 
+    /// Author: Daniel
     /// Started: 12/02/2019
+    /// Modified : 26/02/2020
     /// </summary>
-    public static class SPS_Game
+    public class RPS_Game
     {
-        public const string SCISSORS = "SCISSORS";
-        public const string STONE = "STONE";
-        public const string PAPER = "PAPER";
-        public const string UNKOWN = "UNKNOWN";
+        public const string COMPUTER_NAME = "Computer";
 
-        public static string PlayerName { get; set; }
-        public static string ComputerName { get; set; }
-        public static string ComputerChoice { get; set; }
-        public static string PlayerChoice { get; set; }
-        public static string Winner { get; set; }
+        public string PlayerName { get; set; }
+        //public string ComputerName { get; set; }
+        public string WinnerName { get; set; }
 
-        private static Random randomGenerator = new Random();
+        public RPS_Choices ComputerChoice { get; set; }
+        public RPS_Choices PlayerChoice { get; set; }
 
-        public static void Start()
+        private Random randomGenerator = new Random(123);
+
+        public void Start(string player)
         {
-            PlayerName = "Derek";
-            ComputerName = "Computer";
+            PlayerName = player;
+            WinnerName = "Unkown";
         }
 
         /// <summary>
@@ -39,9 +47,8 @@ namespace CO453ClassConsoleApp.SPS
         /// 
         /// *******************************************************
         /// </summary>
-        public static void End()
+        public void End()
         {
-            Winner = "No Winner";
         }
 
         /// <summary>
@@ -49,36 +56,66 @@ namespace CO453ClassConsoleApp.SPS
         /// 
         /// *******************************************************
         /// </summary>
-        public static void GetComputerChoice()
+        public void GetComputerChoice()
         {
             int choice;
             choice = randomGenerator.Next(3);
 
             if (choice == 0)
             {
-                ComputerChoice = SCISSORS;
+                ComputerChoice = RPS_Choices.ROCK;
+            }
+            else if (choice == 1)
+            {
+                ComputerChoice = RPS_Choices.PAPER;
             }
             else
             {
-                ComputerChoice = UNKOWN;
+                ComputerChoice = RPS_Choices.SCISSORS;
             }
         }
 
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// This will determine whether the computer has won / drawn
+        /// or the player has won / drawn
         /// *******************************************************
         /// </summary>
-        public static void WorkoutWinner()
+        public void WorkoutWinner()
         {
             if (PlayerChoice == ComputerChoice)
             {
-                Winner = "You have Drawn!!!";
+                WinnerName = "You have Drawn!!!";
+            }
+            else if (PlayerChoice == RPS_Choices.ROCK && ComputerChoice == RPS_Choices.SCISSORS)
+            {
+                WinnerName = PlayerName;
+            }
+            else if (PlayerChoice == RPS_Choices.ROCK && ComputerChoice == RPS_Choices.PAPER)
+            {
+                WinnerName = COMPUTER_NAME;
+            }
+            else if (PlayerChoice == RPS_Choices.SCISSORS && ComputerChoice == RPS_Choices.PAPER)
+            {
+                WinnerName = PlayerName;
+            }
+            else if (PlayerChoice == RPS_Choices.SCISSORS && ComputerChoice == RPS_Choices.ROCK)
+            {
+                WinnerName = COMPUTER_NAME;
+            }
+
+            else if (PlayerChoice == RPS_Choices.PAPER && ComputerChoice == RPS_Choices.ROCK)
+            {
+                WinnerName = PlayerName;
+            ;}
+            else if (PlayerChoice == RPS_Choices.PAPER && ComputerChoice == RPS_Choices.SCISSORS)
+            {
+                WinnerName = PlayerName;
             }
             else
             {
-                Winner = "Not Yet Determined!!!";
+                WinnerName = "You've drawn!!!";
             }
 
         }

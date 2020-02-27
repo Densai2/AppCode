@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BMICalculator
+namespace BodyMassIndexCalcualtor
 {
-    class BodyMassIndex
+    public class BMI
     {
         //<summery>
         // This gets the user's weight & height, and then converts it to a double. 

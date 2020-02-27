@@ -29,16 +29,74 @@ namespace CO453ClassConsoleApp
             //TestTournament();           // T5.1 and 5.3
             //TestSongs();                // T5.2
             //TestMotelBooking();         // T5.6
-            //TestSPS_Game();
+            //TestRPS_Game();
         }
 
-        private static void BMICalculator()
+        private static void TestRPS_Game()
         {
-            BodyMassIndex bodyMassIndex = new BodyMassIndex();
-
-            BodyMassIndex.Calculator();
+            GameController controller = new GameController();
+            controller.RunGame();
         }
+
+        /// <summary>
+        /// Task 5.6
+        /// A simple room booking system
+        /// </summary>
+        private static void TestMotelBooking()
+        {
+            BatesMotel motel = new BatesMotel();
+
+            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
+
+            string[] choices =
+            {
+                "1. Book a Room",
+                "2. Vacate a Room",
+                "3. Display All Rooms",
+                "4. Vacate All Rooms",
+                "5. Quit"
+            };
+
+            int choice = SimpleIO.GetChoice(choices);
+
+            switch (choice)
+            {
+                case 1:
+                    motel.Book(1, 2);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        /// Task 5.2
+        /// </summary>
         private static void TestSongs()
+        {
+            MP3Chart chart = new MP3Chart();
+
+            chart.ShowSongs();
+
+            bool finish = false;
+
+            while (!finish)
+            {
+                int songNo = chart.GetVotes();
+                if (songNo == 0) finish = true;
+
+            }
+
+            chart.ShowVotes();
+        }
+        /*
+        private static void TestBMI()
+        {
+            BMI BMI = new BMI();
+        }
+        */
+
+        private static void testSongs()
         {
             MP3Chart chart = new MP3Chart();
 
