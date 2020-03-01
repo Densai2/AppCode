@@ -9,7 +9,7 @@ namespace BodyMassIndexCalcualtor
         //<summery>
         // This gets the user's weight & height, and then converts it to a double. 
         //</summery>
-        static void Calculator()
+        public static void Calculator()
         {
             Console.Write("Enter your weight (kg): ");
             double kg = Convert.ToDouble(Console.ReadLine());

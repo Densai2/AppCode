@@ -1,10 +1,11 @@
 ﻿using System;
+using CO453ClassConsoleApp.SPS;
 
 namespace CO453ClassConsoleApp.SPS
 {
     /// <summary>
     /// Thuis class will handle the input and output
-    /// of the SPS Game
+    /// of the RPS Game
     /// </summary>
     public class GameController
     {
@@ -13,7 +14,6 @@ namespace CO453ClassConsoleApp.SPS
         public const string ROCK = "ROCK";
         public const string PAPER = "PAPER";
         public const string SCISSORS = "SCISSORS";
-
         public const int MAXN_TURNS = 3;
 
         private RPS_Game game = new RPS_Game();
@@ -24,9 +24,7 @@ namespace CO453ClassConsoleApp.SPS
         {
             SetupScreen();
             StartGame();
-            Console.Write("Please type your name: ");
-            string userName = Console.ReadLine();
-
+            
             for(turn = 1; turn <= MAXN_TURNS; turn++)
             {
                 GetPlayerChoice();
@@ -34,7 +32,7 @@ namespace CO453ClassConsoleApp.SPS
 
                 ShowChoices();
 
-                game.WorkoutWinner();
+                game.WorkOutWinner();
                 ShowResult();
 
                 Console.WriteLine();
@@ -50,13 +48,12 @@ namespace CO453ClassConsoleApp.SPS
         /// <summary>
         /// 
         /// </summary>
-        private void EndGame()
+        public void EndGame()
         {
             Console.Clear();
             SimpleIO.WriteTitle(Title, "Week 3");
-            Console.WriteLine("The overall winner is " + game.WinnerName);
-            
-           
+            game.OverAllWinner();
+         
         }
 
         /// <summary>
@@ -64,7 +61,7 @@ namespace CO453ClassConsoleApp.SPS
         /// 
         /// *******************************************************
         /// </summary>
-        private void GetPlayerChoice()
+        public void GetPlayerChoice()
         {
             Console.Clear();
             SimpleIO.WriteTitle(Title, "Week 3");
@@ -101,7 +98,7 @@ namespace CO453ClassConsoleApp.SPS
         /// choice at (x = 50, y = 14)
         /// FIND THE SINGLE MISTAKE!!!
         /// </summary>
-        private void DrawChoice(RPS_Players player)
+        public void DrawChoice(RPS_Players player)
         {
             RPS_Choices choice;
 
@@ -132,42 +129,40 @@ namespace CO453ClassConsoleApp.SPS
                 Images.DrawStone(x, y);
             }
         }
-
         /// <summary>
         /// *******************************************************
         /// 
         /// *******************************************************
         /// </summary>
-        private void ShowChoices()
+        public void ShowChoices()
         {
             DrawChoice(RPS_Players.PLAYER);
             DrawChoice(RPS_Players.COMPUTER);
 
-            Console.WriteLine("\n\tYou picked " + game.PlayerChoice);
+            Console.WriteLine("\n\t" + game.PlayerName + " picked " + game.PlayerChoice);
             Console.WriteLine("\tThe computer choice is " + game.ComputerChoice);
             Console.WriteLine();
         }
-
+       
         /// <summary>
         /// *******************************************************
         /// 
         /// *******************************************************
         /// </summary>
-        private void ShowResult()
+        public void ShowResult()
         {
             Console.WriteLine("\t" + game.PlayerName + " score: " + game.PlayerScore);
             Console.WriteLine("\tThe computer's score: " + game.ComputerScore);
-            Console.WriteLine("\tThe winner is the " + game.WinnerName);
-            Console.WriteLine();
-        }
+            Console.WriteLine("\tThe winner is " + game.WinnerName);
 
+        }
 
         /// <summary>
         /// *******************************************************
         /// 
         /// *******************************************************
         /// </summary>
-        private void SetupScreen()
+        public void SetupScreen()
         {
             Console.Title = Title;
 
@@ -185,10 +180,13 @@ namespace CO453ClassConsoleApp.SPS
         /// 
         /// *******************************************************
         /// </summary>
-        private void StartGame()
+        public void StartGame()
         {
+            Console.WriteLine("What's your name?");
+            string userName = Console.ReadLine();
             SimpleIO.WriteTitle(Title, "Week 3");
-            game.Start("Danny");
+            game.Start(userName);
         }
+   
     }
 }

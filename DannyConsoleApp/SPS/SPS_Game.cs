@@ -29,8 +29,8 @@ namespace CO453ClassConsoleApp.SPS
 
         public int ComputerScore { get; set; }
 
-        public int PlayerScore{get; set;}
-        
+        public int PlayerScore { get; set; }
+
         public string PlayerName { get; set; }
         //public string ComputerName { get; set; }
         public string WinnerName { get; set; }
@@ -38,7 +38,7 @@ namespace CO453ClassConsoleApp.SPS
         public RPS_Choices ComputerChoice { get; set; }
         public RPS_Choices PlayerChoice { get; set; }
 
-        private Random randomGenerator = new Random(123);
+        private Random randomGenerator = new Random();
 
         public void Start(string player)
         {
@@ -55,6 +55,7 @@ namespace CO453ClassConsoleApp.SPS
         /// </summary>
         public void End()
         {
+            return;
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace CO453ClassConsoleApp.SPS
         /// or the player has won / drawn
         /// *******************************************************
         /// </summary>
-        public void WorkoutWinner()
+        public void WorkOutWinner()
         {
             if (PlayerChoice == ComputerChoice)
             {
@@ -119,7 +120,8 @@ namespace CO453ClassConsoleApp.SPS
             {
                 WinnerName = PlayerName;
                 PlayerScore = PlayerScore + 2;
-            ;}
+                ;
+            }
             else if (PlayerChoice == RPS_Choices.PAPER && ComputerChoice == RPS_Choices.SCISSORS)
             {
                 WinnerName = COMPUTER_NAME;
@@ -130,21 +132,24 @@ namespace CO453ClassConsoleApp.SPS
             {
                 WinnerName = "You've drawn!!!";
             }
-          void Finish()
-          {
-            if (PlayerScore >= 3)
+        }
+        public void OverAllWinner()
+        {
+            if(PlayerScore > ComputerScore)
             {
-             Images.DrawThumbsUp();
+                Console.WriteLine("The winner is " + PlayerName + "!!!");
+                Images.DrawThumbsUp();
             }
-            else if (ComputerScore >= 3)
+            else if(ComputerScore > PlayerScore)
             {
-            Images.DrawThumbsDown();
+                Console.WriteLine("The winner is the computer!!!");
+                Images.DrawThumbsDown();
             }
             else
             {
-            Images.DrawSmile();
+                Console.WriteLine("It's a draw...");
+                Images.DrawSmile();
             }
-          }
         }
     }
 }

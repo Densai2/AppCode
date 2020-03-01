@@ -8,7 +8,7 @@ namespace CO453ClassConsoleApp.Unit5
     /// Task 5.2 Class Example
     /// This class get votes for an array of song titles currently
     /// in the top ten uk chart
-    /// Derek Peacock
+    /// Daniel Grace
     /// </summary>
     public class MP3Chart
     {

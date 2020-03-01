@@ -1,5 +1,6 @@
 ﻿using CO453_ClassConsoleApp.Unit4;
 using CO453_ClassConsoleApp.Unit5;
+using BodyMassIndexCalcualtor;
 using CO453ClassConsoleApp.SPS;
 using CO453ClassConsoleApp.Unit4;
 using CO453ClassConsoleApp.Unit5;
@@ -15,7 +16,7 @@ namespace CO453ClassConsoleApp
     /// 
     /// Objects include: DistanceConverter,  Book \
     /// 
-    /// Author: Dr Derek Peacock
+    /// Author: Daniel Grace
     /// </summary>
     class Program
     {
@@ -28,8 +29,16 @@ namespace CO453ClassConsoleApp
             //TestBook();                 // T4.2 and T4.3
             //TestTournament();           // T5.1 and 5.3
             //TestSongs();                // T5.2
+            //TestBMI();
             //TestMotelBooking();         // T5.6
             TestRPS_Game();
+        }
+
+       private static void TestBMI()
+        {
+            BMI bMI = new BMI();
+
+            BMI.Calculator();
         }
 
         private static void TestRPS_Game()
@@ -63,6 +72,8 @@ namespace CO453ClassConsoleApp
             {
                 case 1:
                     motel.Book(1, 2);
+                    break;
+                case 2:
                     break;
 
                 default:
