@@ -14,7 +14,8 @@ namespace CO453ClassConsoleApp
     /// defined in Part A of CO453 and tests that each object
     /// works
     /// 
-    /// Objects include: DistanceConverter,  Book \
+    /// Objects include: DistanceConverter,  Book, torunament,
+    /// song list, BMI calculator, motel booking and RPS game.
     /// 
     /// Author: Daniel Grace
     /// </summary>
