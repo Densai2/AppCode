@@ -13,7 +13,7 @@ namespace BodyMassIndexCalcualtor
         {
             Console.Write("Enter your weight (kg): ");
             double kg = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("What is your height(metres): ");
+            Console.Write("What is your height(metres): ");
             double metres = Convert.ToDouble(Console.ReadLine());
 
             //<summery>

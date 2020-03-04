@@ -18,7 +18,11 @@ namespace CO453ClassConsoleApp.SPS
     }
 
     /// <summary>
-    /// This class plays ...
+    /// This class runs the game
+    /// The computer chooses a number, and so does the user
+    /// Depending on the outcome a number will be added
+    /// At the end of the game, the winner will be displayed
+    /// with the appropriate symbol.
     /// Author: Daniel
     /// Started: 12/02/2019
     /// Modified : 26/02/2020
@@ -50,7 +54,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// Ends the game
         /// *******************************************************
         /// </summary>
         public void End()
@@ -60,7 +64,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// Computer choose a number between 1-3
         /// *******************************************************
         /// </summary>
         public void GetComputerChoice()
@@ -133,6 +137,10 @@ namespace CO453ClassConsoleApp.SPS
                 WinnerName = "You've drawn!!!";
             }
         }
+
+        /// <summary>
+        /// The scores are compared, the result is shown with an image.
+        /// </summary>
         public void OverAllWinner()
         {
             if(PlayerScore > ComputerScore)
@@ -142,7 +150,7 @@ namespace CO453ClassConsoleApp.SPS
             }
             else if(ComputerScore > PlayerScore)
             {
-                Console.WriteLine("The winner is the computer!!!");
+                Console.WriteLine("The winner is the " + COMPUTER_NAME + "!!!");
                 Images.DrawThumbsDown();
             }
             else

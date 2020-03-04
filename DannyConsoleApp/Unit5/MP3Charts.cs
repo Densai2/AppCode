@@ -33,6 +33,10 @@ namespace CO453ClassConsoleApp.Unit5
             };
         }
 
+        /// <summary>
+        /// Prints the title, gets user's song choice
+        /// and then adds one onto the total votes.
+        /// </summary>
         public int GetVotes()
         {
             SimpleIO.WriteTitle("Vote for UK Top 10 Chart Singles", "Task 5.2");
@@ -45,7 +49,6 @@ namespace CO453ClassConsoleApp.Unit5
 
             return songNo;
         }
-
 
         public void ShowVotes()
         {

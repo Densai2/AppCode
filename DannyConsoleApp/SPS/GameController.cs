@@ -39,14 +39,13 @@ namespace CO453ClassConsoleApp.SPS
                 Console.Write("Press any key!");
                 Console.ReadKey();
             }
-
             game.End();
 
             EndGame();
         }
 
         /// <summary>
-        /// 
+        /// Clears the console and displays winner
         /// </summary>
         public void EndGame()
         {
@@ -58,7 +57,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// Takes the user's number and gives the correct sign.
         /// *******************************************************
         /// </summary>
         public void GetPlayerChoice()
@@ -96,7 +95,6 @@ namespace CO453ClassConsoleApp.SPS
         /// either the computer, or the player.  The player's
         /// choice is drawn at (x = 5, y = 14) and the computers 
         /// choice at (x = 50, y = 14)
-        /// FIND THE SINGLE MISTAKE!!!
         /// </summary>
         public void DrawChoice(RPS_Players player)
         {
@@ -131,7 +129,7 @@ namespace CO453ClassConsoleApp.SPS
         }
         /// <summary>
         /// *******************************************************
-        /// 
+        /// At the end of the round the choices are shown.
         /// *******************************************************
         /// </summary>
         public void ShowChoices()
@@ -146,12 +144,12 @@ namespace CO453ClassConsoleApp.SPS
        
         /// <summary>
         /// *******************************************************
-        /// 
+        /// The result for the round is shown to the user.
         /// *******************************************************
         /// </summary>
         public void ShowResult()
         {
-            Console.WriteLine("\t" + game.PlayerName + " score: " + game.PlayerScore);
+            Console.WriteLine("\t" + game.PlayerName +"'s score: " + game.PlayerScore);
             Console.WriteLine("\tThe computer's score: " + game.ComputerScore);
             Console.WriteLine("\tThe winner is " + game.WinnerName);
 
@@ -159,7 +157,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// Sets the title, window size, colours and clears the console.
         /// *******************************************************
         /// </summary>
         public void SetupScreen()
@@ -177,12 +175,12 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// Asks for the user's name, begins the game.
         /// *******************************************************
         /// </summary>
         public void StartGame()
         {
-            Console.WriteLine("What's your name?");
+            Console.Write("What's your name? ");
             string userName = Console.ReadLine();
             SimpleIO.WriteTitle(Title, "Week 3");
             game.Start(userName);

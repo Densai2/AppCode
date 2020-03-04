@@ -7,7 +7,7 @@ namespace CO453_ClassConsoleApp.Unit4
     /// <summary>
     /// This class will convert miles to feet, or feet to miles
     /// 
-    /// Author: Derek Peacock
+    /// Author: Daniel Grace
     /// </summary>
     public class DistanceConverter
     {

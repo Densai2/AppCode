@@ -14,7 +14,7 @@ namespace TournamentUnit5
         private string[] names;
 
         /// <summary>
-        /// Class Constructor (not needed)
+        /// Class Constructor for testing
         /// </summary>
         public Tournament()
         {

@@ -53,8 +53,7 @@ namespace CO453ClassConsoleApp.Unit4
         }
 
         /// <summary>
-        /// Get the details of the author, name, town, animal
-        /// job and weapon used in the books stories
+        /// Get the details user's choice for our strings.
         /// </summary>
         public void GetDetails() // keep using ask() to get information
         {

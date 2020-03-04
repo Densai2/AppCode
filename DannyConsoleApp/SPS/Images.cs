@@ -16,7 +16,8 @@ namespace CO453ClassConsoleApp.SPS
     {
         /// <summary>
         /// *******************************************************
-        /// 
+        /// Draw scissors will write these lines which will create
+        /// scissors when ran
         /// *******************************************************
         /// </summary>
         public static void DrawScissors(int x, int y)
@@ -48,7 +49,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// When the user chooses rock this rock will be drawn
         /// *******************************************************
         /// </summary>
         public static void DrawStone(int x, int y)
@@ -84,7 +85,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// When paper has been chosen this is printed to the console.
         /// *******************************************************
         /// </summary>
         public static void DrawPaper(int x, int y)
@@ -120,7 +121,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// This will draw a smile when it is called
         /// *******************************************************
         /// </summary>
         public static void DrawSmile()
@@ -139,7 +140,7 @@ namespace CO453ClassConsoleApp.SPS
 
         /// <summary>
         /// *******************************************************
-        /// 
+        /// This will draw a thumbs up when called
         /// *******************************************************
         /// </summary>
         public static void DrawThumbsUp()

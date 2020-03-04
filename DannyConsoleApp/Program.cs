@@ -25,13 +25,13 @@ namespace CO453ClassConsoleApp
         /// </summary>
         static void Main(string[] args)
         {
-            //TestDistanceConverter();    // T4.1
+            TestDistanceConverter();    // T4.1
             //TestBook();                 // T4.2 and T4.3
             //TestTournament();           // T5.1 and 5.3
             //TestSongs();                // T5.2
             //TestBMI();
             //TestMotelBooking();         // T5.6
-            TestRPS_Game();
+            //TestRPS_Game();
         }
 
        private static void TestBMI()
