@@ -49,7 +49,10 @@ namespace CO453ClassConsoleApp.Unit5
 
             return songNo;
         }
-
+        /// <summary>
+        /// At the end of the process this will display the 
+        /// results back to the user.
+        /// </summary>
         public void ShowVotes()
         {
             SimpleIO.WriteTitle("UK Top 10 Chart Singles", "Task 5.2");
@@ -64,7 +67,9 @@ namespace CO453ClassConsoleApp.Unit5
             }
 
         }
-
+        /// <summary>
+        /// Begins by showing the song choice to the user.
+        /// </summary>
         public void ShowSongs()
         {
             SimpleIO.WriteTitle("UK Top 10 Chart Singles", "Task 5.2");

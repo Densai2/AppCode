@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+/// <summary>
+/// This program will run a simple Motel booking and checking system.
+/// </summary>
 namespace BatesMotel.Unit5
 {
+    /// <summary>
+    /// The variables are set for later use in the code.
+    /// </summary>
     public class RunBatesMotel
     {
         public const int MAXN_ROOMS = 20;
@@ -16,8 +21,12 @@ namespace BatesMotel.Unit5
         {
             rooms = new int[MAXN_ROOMS + 1];
         }
-
-        public void MainProgram()
+        /// <summary>
+        /// Prints the menu to the user and gives number choices
+        /// when a number matches a choice, it will send the 
+        /// user to the correct area.
+        /// </summary>
+        public void RunBates()
         {
             string choice = "";
 
@@ -53,7 +62,10 @@ namespace BatesMotel.Unit5
                 }
             } while (choice != "5");
         } 
-
+        /// <summary>
+        /// Asks user for a room number, and checks if
+        /// conditions are met to book the room.
+        /// </summary>
         public void BookRoom()
         {
             Console.WriteLine("===============");
@@ -67,7 +79,7 @@ namespace BatesMotel.Unit5
                 roomNumber = Convert.ToInt32(Console.ReadLine());
                 if(rooms[roomNumber] != 0)
                 {
-                    Console.WriteLine("Soory this room is booked");
+                    Console.WriteLine("Sorry this room is booked");
                     Console.Write("Please choose a different room");
                 }
             } while (rooms[roomNumber] != 0);
@@ -89,6 +101,10 @@ namespace BatesMotel.Unit5
             totalGuests += guests;
             roomsBooked++;
         }
+        /// <summary>
+        /// Asks for a room to vatcate and returns
+        /// the room's value to 0.
+        /// </summary>
         public void VacateARoom()
         {
             Console.Write("Which room would you like to vacate?: ");
@@ -99,6 +115,10 @@ namespace BatesMotel.Unit5
             roomsBooked -= 1;
             Console.ReadKey();
         }
+        /// <summary>
+        /// Displays all of the rooms with the amount
+        /// of guests that they have.
+        /// </summary>
         public void DisplayRooms()
         {
             Console.WriteLine("=======================");
@@ -110,6 +130,9 @@ namespace BatesMotel.Unit5
                 Console.WriteLine("Room " + i + "\t" + rooms[i] + " guests");
             } Console.ReadKey();
         }
+        /// <summary>
+        /// Clears the entire Motel of bookings.
+        /// </summary>
         public void VacateAllRooms()
         {
             Array.Clear(rooms, 0, rooms.Length);
