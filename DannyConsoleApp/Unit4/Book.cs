@@ -101,7 +101,7 @@ namespace CO453ClassConsoleApp.Unit4
 
             Console.WriteLine("Life in danger " + name + " sprints to the exit, only to be stopped by a " + jumpscare + ".");
 
-            Console.WriteLine("Terrified, " + name + "hid under the bed, while still they heard " + noise + " " + name + " was in big trouble..");
+            Console.WriteLine("Terrified, " + name + " hid under the bed, while still they heard " + noise + " " + name + " was in big trouble..");
 
             Console.WriteLine("With nowhere to run, " + name + " layed still, closed their eyes. And finally, " + twist + ".");
         }
