@@ -3,6 +3,7 @@ using BodyMassIndexCalcualtor;
 using CO453ClassConsoleApp.SPS;
 using CO453ClassConsoleApp.Unit4;
 using CO453ClassConsoleApp.Unit5;
+using BatesMotel.Unit5;
 using System;
 using TournamentUnit5;
 
@@ -28,9 +29,9 @@ namespace CO453ClassConsoleApp
             //TestDistanceConverter();    // T4.1
             //TestBook();                 // T4.2 and T4.3
             //TestTournament();           // T5.1 and 5.3
-            TestSongs();                // T5.2
+            //TestSongs();                // T5.2
             //TestBMI();
-            //TestMotelBooking();         // T5.6
+            TestMotelBooking();         // T5.6
             //TestRPS_Game();
         }
 
@@ -53,32 +54,10 @@ namespace CO453ClassConsoleApp
         /// </summary>
         private static void TestMotelBooking()
         {
-            BatesMotel motel = new BatesMotel();
+            RunBatesMotel runBatesMotel = new RunBatesMotel();
 
-            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
-
-            string[] choices =
-            {
-                "1. Book a Room",
-                "2. Vacate a Room",
-                "3. Display All Rooms",
-                "4. Vacate All Rooms",
-                "5. Quit"
-            };
-
-            int choice = SimpleIO.GetChoice(choices);
-
-            switch (choice)
-            {
-                case 1:
-                    motel.Book(1, 2);
-                    break;
-                case 2:
-                    break;
-
-                default:
-                    break;
-            }
+            runBatesMotel.MotelRooms();
+            runBatesMotel.MainProgram();
         }
         /// <summary>
         /// Task 5.2
