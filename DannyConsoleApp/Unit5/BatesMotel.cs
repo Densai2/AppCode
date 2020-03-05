@@ -2,74 +2,108 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CO453_ClassConsoleApp.Unit5
+namespace CO453ClassConsoleApp
 {
-    /// <summary>
-    /// Task 5.6 Independant Study
-    /// Daniel Grace
-    /// </summary>
     public class BatesMotel
     {
         public const int MAXN_ROOMS = 20;
-
         public const int MAXN_GUESTS = 4;
+        private static int[] rooms;
+        private int roomNumber, guests;
+        private static int roomsBooked = 0, totalGuests = 0;
 
-        public string[] roomsAvalible;
-
-        private int[] rooms = new int[MAXN_ROOMS + 1];
-
-
-        public BatesMotel()
+        public void MotelRooms()
         {
-            roomsAvalible = new string[]
-            {
-                "Room one",
-                "Room two",
-                "Room three",
-                "Room four",
-                "Room five",
-                "Room six",
-                "Room seven",
-                "Room eight",
-                "Room nine",
-                "Room ten"
-            };
+            rooms = new int[MAXN_ROOMS + 1];
         }
 
-        public void Options()
+        public void MainProgram()
         {
-            Console.Write("Please enter your choice: ");
-            string choice = Console.ReadLine();
-            int userInput = Convert.ToInt32(choice);
+            string choice = "";
 
-            if(userInput == 1)
+            do
             {
-            }
-        }
+                Console.Clear();
+                Console.WriteLine("The Bates Motel");
+                Console.WriteLine("==================");
+                Console.WriteLine("1. Book a room");
+                Console.WriteLine("Vacate a room");
+                Console.WriteLine("3. Display all rooms");
+                Console.WriteLine("4. Vacate all rooms");
+                Console.WriteLine("5. Quit");
+                Console.WriteLine("Enter your choice: ");
+                choice = Console.ReadLine();
 
-        public bool Book(int roomNo, int noGuests)
-        {
-            if (roomNo >= 1 && roomNo <= 20)
-            {
-                if (noGuests >= 1 && noGuests <= MAXN_GUESTS)
+                if(choice == "1")
                 {
-                    rooms[roomNo] = noGuests;
-                    Console.WriteLine("Room " + roomNo + " is free.");
-                    return true;
+                    BookRoom();
                 }
-            }
+                if(choice == "2")
+                {
+                    VacateARoom();
+                }
+                if(choice == "3")
+                {
+                    DisplayRooms();
+                }
+                if(choice == "4")
+                {
+                    VacateAllRooms();
+                }
+            } while (choice != "5");
+        } 
 
-            return false;
-        }
-        public void Rooms()
+        public void BookRoom()
         {
-           int position = 0;
+            Console.WriteLine("The Bates Motel");
+            Console.WriteLine("===============");
+            Console.WriteLine("Book a room");
 
-            foreach (string room in roomsAvalible)
+            Console.Write("Enter a room number: ");
+            do
             {
-                position++;
-                Console.WriteLine("Song " + position + " is " + roomsAvalible);
-            }
+                roomNumber = Convert.ToInt32(Console.ReadLine());
+                if(rooms[roomNumber] != 0)
+                {
+                    Console.WriteLine("Soory this room is booked");
+                    Console.Write("Please choose a different room");
+                }
+            } while (rooms[roomNumber] != 0);
+
+            Console.Write("How many guests?: ");
+
+            do
+            {
+                guests = Convert.ToInt32(Console.ReadLine());
+                if (guests > MAXN_GUESTS)
+                {
+                    Console.WriteLine("You can only have 4 guests in a room " + roomNumber);
+                    Console.Write("How many guests?: ");
+                }
+            } while (guests > MAXN_GUESTS);
+            
+            rooms[roomNumber] = guests;
+
+            totalGuests += guests;
+            roomsBooked++;
+        }
+        public void VacateARoom()
+        {
+
+        }
+        public void DisplayRooms()
+        {
+            Console.WriteLine("Bates Motel room status");
+            Console.WriteLine("=======================");
+
+            for(int i=1; i < MAXN_ROOMS + 1; i++)
+            {
+                Console.WriteLine("Room" + i + "\t" + rooms[i] + " guests");
+            } Console.ReadKey();
+        }
+        public void VacateAllRooms()
+        {
+
         }
     }
 }

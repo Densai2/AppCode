@@ -6,26 +6,19 @@ namespace BodyMassIndexCalcualtor
 {
     public class BMI
     {
-        //<summery>
-        // This gets the user's weight & height, and then converts it to a double. 
-        //</summery>
+        /// <summary>
+        /// This gets the user's weight & height, and then converts it to a double.
+        /// </summary>
         public static void Calculator()
         {
             Console.Write("Enter your weight (kg): ");
             double kg = Convert.ToDouble(Console.ReadLine());
             Console.Write("What is your height(metres): ");
-            double metres = Convert.ToDouble(Console.ReadLine());
-
-            //<summery>
-            // This is going to use the formula to calculate BMI and then display it to 2 decimal places.
-            //</summery>
+            double metres = Convert.ToDouble(Console.ReadLine());   
 
             double BMI = kg / (metres * metres);
             Console.WriteLine("Your BMI is: " + Math.Round(BMI, 2));
 
-            //<summery>
-            // We then check where the user fits in the catergories of weight, and display their result.
-            //</summery>
 
             if (BMI <= 16)
             {

@@ -61,6 +61,7 @@ namespace TournamentUnit5
             
         //<summery>
         //Shows the players and their scores to the user
+        //</summery>
         public void ShowDetails()
         {
             CO453ClassConsoleApp.SimpleIO.WriteTitle("Show tournament scores", "Task 5.1");

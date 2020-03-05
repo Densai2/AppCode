@@ -1,5 +1,4 @@
 ﻿using CO453_ClassConsoleApp.Unit4;
-using CO453_ClassConsoleApp.Unit5;
 using BodyMassIndexCalcualtor;
 using CO453ClassConsoleApp.SPS;
 using CO453ClassConsoleApp.Unit4;
@@ -26,10 +25,10 @@ namespace CO453ClassConsoleApp
         /// </summary>
         static void Main(string[] args)
         {
-            TestDistanceConverter();    // T4.1
+            //TestDistanceConverter();    // T4.1
             //TestBook();                 // T4.2 and T4.3
             //TestTournament();           // T5.1 and 5.3
-            //TestSongs();                // T5.2
+            TestSongs();                // T5.2
             //TestBMI();
             //TestMotelBooking();         // T5.6
             //TestRPS_Game();
@@ -108,15 +107,6 @@ namespace CO453ClassConsoleApp
         }
         */
 
-        private static void testSongs()
-        {
-            MP3Chart chart = new MP3Chart();
-
-            chart.ShowSongs();
-            chart.GetVotes();
-            chart.ShowVotes();
-        }
-
         /// <summary>
         /// Task 5.1 Create a new Tournamnet object
         /// get the scores for players and show them
@@ -129,7 +119,6 @@ namespace CO453ClassConsoleApp
             tournament.ShowDetails();
             
         }
-
 
         /// <summary>
         /// Task 4.2 Create a Book object and test that it writes chapter 1 and 2
@@ -186,8 +175,8 @@ namespace CO453ClassConsoleApp
                     feet = converter.GetDouble("Feet");
                     miles = converter.ToMiles(feet);
 
-                    Console.WriteLine("The no of feet  = " + feet);
-                    Console.WriteLine("The no of miles = " + miles);
+                    Console.WriteLine("The no of feet  = " + Math.Round(feet , 2));
+                    Console.WriteLine("The no of miles = " + Math.Round(miles, 2));
                 }
 
 
