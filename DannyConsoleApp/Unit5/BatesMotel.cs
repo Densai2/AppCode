@@ -101,12 +101,13 @@ namespace BatesMotel.Unit5
         }
         public void DisplayRooms()
         {
+            Console.WriteLine("=======================");
             Console.WriteLine("Bates Motel room status");
             Console.WriteLine("=======================");
 
             for(int i=1; i < MAXN_ROOMS + 1; i++)
             {
-                Console.WriteLine("Room" + i + "\t" + rooms[i] + " guests");
+                Console.WriteLine("Room " + i + "\t" + rooms[i] + " guests");
             } Console.ReadKey();
         }
         public void VacateAllRooms()
